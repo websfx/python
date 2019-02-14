@@ -12,12 +12,12 @@ for child in root:
     for child2 in child:
         print(child2.tag,child2.text)
 
-for node in root.iter("year"):
-    new_year = int(node.text) + 1
-    node.text = str(new_year)
-    node.set("updated","no")
-
-tree.write("xml-test1.xml")
+# for node in root.iter("year"):
+#     new_year = int(node.text) + 1
+#     node.text = str(new_year)
+#     node.set("updated","no")
+#
+# tree.write("xml-test1.xml")
 
 # for country in root.findall("country"):
 #     rank = int(country.find("rank").text)
