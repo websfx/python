@@ -1,7 +1,7 @@
 #coding: utf-8
 import json,urllib2
 header = {"Content-Type": "application/json"}
-ApiUrl = 'http://172.16.192.202:8081/zabbix/api_jsonrpc.php'
+ApiUrl = 'http://sxxxxxxxx/zabbix/api_jsonrpc.php'
 
 class zabbixAuth(object):
 
@@ -56,7 +56,7 @@ class zabbixAPi(object):
         return response['result']
 
 
-#user1auth = zabbixAuth('http://10.127.0.119/api_jsonrpc.php','Admin','qwe@123..asd')
+#user1auth = zabbixAuth('http://xxxxxx/api_jsonrpc.php','Admin','xxxxxx')
 
 
 
