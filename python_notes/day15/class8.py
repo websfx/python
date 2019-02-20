@@ -14,9 +14,26 @@ class foo:
     # 方法
     def test(self,content):
         print(self.name,self.sex,self.blood,content)
+    
+    # 获取值
+    @property
+    def per(self):
+        return 1
+    
+    # 设置值
+    @per.setter
+    def per(self,val):
+        print(val)
+    @per.deleter   
+    # 删除值
+
+    def  per(self):
+        print("666")
 
 obj = foo("huahua","male") # 自动执行init方法
 obj.test("xxxxxxxxx")
-
-print(obj.country)
-print(foo.country)
+r = obj.per
+print(r)
+# 属性 定义的时候像方法 调用的时候像字段
+obj.per = 1234
+del obj.per

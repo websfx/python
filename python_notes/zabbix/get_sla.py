@@ -7,7 +7,6 @@ import re
 import time
 import datetime
 
-
 # 获取登录token
 def getToken(url, header, username, password):
     data = {"jsonrpc": "2.0",
