@@ -85,11 +85,11 @@ def getSla(url, header, token):
     return json.loads(sla.content)["result"]
 
 
-url = "http://172.16.192.202:8081/zabbix/api_jsonrpc.php"
-#url = "https://183.230.40.141:8989/zabbix/api_jsonrpc.php"
+url = "http://xxxxxxxxx/zabbix/api_jsonrpc.php"
+#url = "https://xxxxxxxxxxx/zabbix/api_jsonrpc.php"
 header = {"Content-Type": "application/json-rpc"}
-username = "zhouhua"
-password = "abcd1234"
+username = "xxxxxxxx"
+password = "xxxxxxxxxx"
 token = getToken(url, header, username, password)
 print(token)
 # print(token)
