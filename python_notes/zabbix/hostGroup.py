@@ -17,7 +17,7 @@ def getHostGroup(url,header,token):
     group = requests.post(url=url,headers=header,data=json.dumps(data))
     return json.loads(group.content)["result"]
 
-url = "http://172.16.192.202:8081/zabbix/api_jsonrpc.php"
+url = "http://xxxxxxxx/zabbix/api_jsonrpc.php"
 
 header = {"Content-Type": "application/json-rpc"}
 token = "8e7a35dfd858dfa88f41c3565114e479"
