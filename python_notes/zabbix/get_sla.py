@@ -6,6 +6,9 @@ import json
 import re
 import time
 import datetime
+from email.mime.text import MIMEText
+import smtplib
+
 
 # 获取登录token
 def getToken(url, header, username, password):
@@ -84,11 +87,11 @@ def getSla(url, header, token,timeStamp2,timeStamp1):
     return json.loads(sla.content)["result"]
 
 
-url = "http://xxxxxxxxxxxxxxx/zabbix/api_jsonrpc.php"
+url = "http://xxxxxxxxxx/zabbix/api_jsonrpc.php"
 #url = "https://xxxxxxxxxxxxxxx/zabbix/api_jsonrpc.php"
 header = {"Content-Type": "application/json-rpc"}
-username = "xxxxxxxxxxx"
-password = "xxxxxxxxxxxx"
+username = "xxxxxxxxxxxxx"
+password = "xxxxxx"
 token = getToken(url, header, username, password)
 #print(token)
 # print(token)
@@ -101,7 +104,7 @@ token = getToken(url, header, username, password)
 #host = getIp(hosts)
 # print(host)
 # 写进文本中
-
+# writeHost(host)
 # 当前时间
 now_time = datetime.datetime.now().strftime("%Y-%m-%d 00:00:00")
 # 7天前时间
@@ -113,5 +116,21 @@ timeStamp1 = time.mktime(timeArray1)
 # 7天前时间的时间戳
 timeArray2 = time.strptime(to_time2,"%Y-%m-%d %H:%M:%S")
 timeStamp2 = time.mktime(timeArray2)
-sla = getSla(url,header,token,timeStamp2,timeStamp1)["25"]["sla"][0]["sla"]
+sla = round(getSla(url,header,token,timeStamp2,timeStamp1)["25"]["sla"][0]["sla"],2)
 print(round(sla,2))
+
+msg_from = "18315293270@139.com"
+msg_to = ["331379375@qq.com","286991486@qq.com"]
+passwd = "xxxxxxxxxxxx"
+
+subject = "python邮件测试"
+content = "hello,today's sla of xxxx is %s" %sla
+msg = MIMEText(content)
+msg["Subject"] = subject
+msg["From"] = msg_from
+msg["To"] = ','.join(msg_to)
+#print(msg["To"])
+
+s = smtplib.SMTP_SSL("smtp.139.com",465)
+s.login(msg_from,passwd)
+s.sendmail(msg_from,msg["To"].split(','),msg.as_string())
