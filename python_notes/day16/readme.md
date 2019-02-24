@@ -25,3 +25,17 @@ __表示私有 不能直接被外部所访问 私有字段 私有方法
 在python里，一切事物都是对象
 type("类名",(object,),func....)
  ```
+
+ ##### 异常处理和反射
+
+ ```
+ try exception finally
+
+ 反射：
+ getattr hasattr setattr delattr
+```
+##### 单例模式
+
+```
+单例：用于使用同一份实例（对象）
+```
