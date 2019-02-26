@@ -10,6 +10,8 @@ socket编程
 3.client下的方法: connect recv send sendall
 4.在python3中，接受和传送的内容一定是byte
 
+str: unicode
+bytes: 十六进制
 
 
 
