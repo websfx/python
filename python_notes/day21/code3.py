@@ -1,17 +1,12 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# 远程执行
-
 from fabric.api import *
-
-
-
 env.user = "root"
-env.password = "123456"
+env.password = "root"
 # 用户名和密码一样
 # env.hosts=['user@ip:port',]
-env.hosts = ["192.168.29.101","192.168.29.102"]
+env.hosts = ["60.205.177.168:500"]
 # 密码不一样
 # env.passwords={'root@192.168.56.1:22':'passwd', 'root@192.168.56.2:22':'python'}
 # 不同主机不同密码
