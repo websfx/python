@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import pymysql
 
-host = "60.205.177.168"
+host = "xxxx"
 user = "root"
 password = "root"
 db = "huahua"
