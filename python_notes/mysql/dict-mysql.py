@@ -1,7 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 import  pymysql
-host = "60.205.177.168"
+import  sys
+
+host = "xxx"
 user = "root"
 password = "root"
 db = "huahua"

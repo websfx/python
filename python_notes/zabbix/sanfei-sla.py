@@ -50,7 +50,7 @@ def getSla(url, header, token,timeStamp2,timeStamp1):
     
 
 
-url = "http://172.16.192.202:8081/zabbix/api_jsonrpc.php"
+url = "http://xxxxx/zabbix/api_jsonrpc.php"
 #url = "https://xxxxxxxxxxxxxxx/zabbix/api_jsonrpc.php"
 header = {"Content-Type": "application/json-rpc"}
 username = "zhouhua"
