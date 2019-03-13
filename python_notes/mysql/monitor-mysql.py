@@ -5,7 +5,7 @@ import sys
 import pymysql
 import re
 
-host = "60.205.177.168"
+host = "xxxx"
 user = "root"
 password = "root"
 db = "mysql"
